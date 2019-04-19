@@ -1,0 +1,18 @@
+CREATE DATABASE proyectoFinal;
+USE proyectoFinal;
+CREATE TABLE usuarios(idUsuario INT PRIMARY KEY AUTO_INCREMENT, username VARCHAR(100), pass VARCHAR(100));
+INSERT INTO usuarios(username, pass) VALUES ('admin', 'admin');
+CREATE TABLE peliculas(idPeli INT PRIMARY KEY AUTO_INCREMENT, nombrePeli VARCHAR(100), director VARCHAR(100), anio INT, rentadoPeli BIT default 0);
+INSERT INTO peliculas(nombrePeli, director, anio) VALUES ('Shrek', 'Andrew Adamson', 2001);
+INSERT INTO peliculas(nombrePeli, director, anio) VALUES ('2001: Odisea en el Espacio', 'Stanley Kubrick', 1968);
+INSERT INTO peliculas(nombrePeli, director, anio) VALUES ('I Stand Alone', 'Gaspar Noe', 1999);
+INSERT INTO peliculas(nombrePeli, director, anio) VALUES ('Mad Max: Fury Road', 'George Miller', 2015);
+INSERT INTO peliculas(nombrePeli, director, anio) VALUES ('Suspiria', 'Dario Argento', 1977);
+CREATE TABLE series(idSerie INT PRIMARY KEY AUTO_INCREMENT, nombreSerie VARCHAR(100), temporadas INT, productora VARCHAR(100), rentadoSerie BIT default 0);
+INSERT INTO series(nombreSerie, temporadas, productora) VALUES ('Mad Men', 7, 'AMC');
+INSERT INTO series(nombreSerie, temporadas, productora) VALUES ('Seinfeld', 9, 'Castle Rock Entertainment');
+INSERT INTO series(nombreSerie, temporadas, productora) VALUES ('Friends', 10, 'Bright/Kauffman/Crane Productions');
+INSERT INTO series(nombreSerie, temporadas, productora) VALUES ('How I Met Your Mother', 9, 'Bays & Thomas Productions');
+INSERT INTO series(nombreSerie, temporadas, productora) VALUES ('Star Trek', 3, 'Desilu Productions');
+CREATE TABLE peliculasRentadas(idUsuario INT, idPeli INT);
+CREATE TABLE seriesRentadas(idUsuario INT, idSerie INT);
